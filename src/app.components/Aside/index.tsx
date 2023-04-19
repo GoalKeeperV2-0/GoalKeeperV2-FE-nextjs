@@ -1,23 +1,17 @@
-import { useQuery } from '@tanstack/react-query';
-import Button from 'app.components/App.base/Button';
-import DetailGoal from 'app.features/GoalManage/modalContents/DetailGoal';
-import { GoalDataType, MappedCategory } from 'app.features/GoalManage/types';
-import UploadOnetimeGoal from 'app.features/GoalUpload/modalContents/UploadGoal';
-import { getTodayCertGoal, getUserPoints, getUserStatistics } from 'app.modules/api/overview';
-import { SERVICE_URL } from 'app.modules/constants/ServiceUrl';
-import { useMyGoals } from 'app.modules/hooks/useMyGoals';
-import { modalState } from 'app.modules/store/modal';
-import { getDayDiff } from 'app.modules/utils/getDayDiff';
-import { getTodayString } from 'app.modules/utils/getTodayString';
-
 import React from 'react';
-import { ReactComponent as BallIcon } from 'app.modules/assets/icons/ball/blackBall.svg';
-import { Link, useNavigate } from 'react-router-dom';
+import BallIcon from '@/app.modules/assets/icons/ball/blackBall.svg';
 import { useRecoilState } from 'recoil';
-import { getUserProfile } from 'app.modules/api/user';
 import OverviewTemplate from './OverviewTemplate';
-
-import SideBarButton from './SideBarButton';
+import Button from '../App.base/Button';
+import { getUserProfile } from '@/app.modules/api/user';
+import { modalState } from '@/app.modules/store/modal';
+import { getTodayCertGoal, getUserPoints, getUserStatistics } from '@/app.modules/api/overview';
+import { GoalDataType, MappedCategory } from '@/app.features/GoalManage/types';
+import Link from 'next/link';
+import { SERVICE_URL } from '@/app.modules/constants/ServiceUrl';
+import { useQuery } from '@tanstack/react-query';
+import DetailGoal from '@/app.features/GoalManage/modalContents/DetailGoal';
+import UploadGoal from '@/app.features/GoalUpload/modalContents/UploadGoal';
 // TODO: field & value mapping 시키기
 function Aside() {
 	const [modal, setModal] = useRecoilState(modalState);
@@ -92,7 +86,7 @@ function Aside() {
 					</ul>
 				</OverviewTemplate>
 				<OverviewTemplate title="오늘 인증해주세요">
-					<Link to={SERVICE_URL.manageGoal}>
+					<Link href={SERVICE_URL.manageGoal}>
 						<span className="absolute top-0 right-0 text-[1.6rem] mb-[0.8rem] font-semibold leading-[1.92rem] text-primaryBlack-200">
 							더보기
 						</span>
@@ -118,7 +112,7 @@ function Aside() {
 							size="sm"
 							variant="solid"
 							bgColor="bg-buttonGray-200"
-							onClick={() => setModal({ render: <UploadOnetimeGoal />, isOpen: true })}
+							onClick={() => setModal({ render: <UploadGoal />, isOpen: true })}
 						>
 							<span className="text-center  truncate text-[1.6rem] leading-[1.92rem]">목표등록 하기</span>
 						</Button>

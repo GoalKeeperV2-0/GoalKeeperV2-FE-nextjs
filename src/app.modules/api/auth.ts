@@ -1,4 +1,4 @@
-import { AgeType, SexType } from 'app.features/Auth/components/signUp/OptionalInputArea';
+import { AgeType, SexType } from '@/app.features/Auth/components/signUp/OptionalInputArea';
 import client from './client';
 
 export const oauth2 = async (code: string) => {

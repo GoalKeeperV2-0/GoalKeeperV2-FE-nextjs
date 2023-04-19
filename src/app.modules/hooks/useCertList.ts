@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { getCertAll } from 'app.modules/api/certification';
+import { getCertAll } from '@/app.modules/api/certification';
 import { useEffect } from 'react';
 
 export const useCertList = (page: number, enabled = true) => {

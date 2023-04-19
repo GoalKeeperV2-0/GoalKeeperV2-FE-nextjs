@@ -1,5 +1,5 @@
+import { validateEmail, validatePassword } from '@/app.modules/utils/common';
 import React, { useEffect, useState } from 'react';
-import { validateEmail, validatePassword } from 'app.modules/utils/common';
 
 // import { confirmOverlapEmail } from 'api/memberAPI';
 

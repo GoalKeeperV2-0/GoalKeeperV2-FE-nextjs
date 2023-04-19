@@ -1,5 +1,5 @@
+import { getDayDiff } from '@/app.modules/utils/getDayDiff';
 import React from 'react';
-import { getDayDiff } from 'app.modules/utils/getDayDiff';
 import { GoalStateType } from '../types';
 type Params = {
 	goalState: GoalStateType;

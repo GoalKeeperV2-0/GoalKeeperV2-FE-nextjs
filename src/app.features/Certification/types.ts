@@ -1,4 +1,4 @@
-import { CertType, GoalDataType } from 'app.features/GoalManage/types';
+import { CertType, GoalDataType } from '../GoalManage/types';
 
 export type CertStateType = 'ONGOING' | 'SUCCESS' | 'FAIL';
 

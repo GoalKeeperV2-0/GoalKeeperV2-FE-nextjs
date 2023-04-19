@@ -1,10 +1,10 @@
-import Label from 'app.components/App.base/Input/Label';
-import TextInput from 'app.components/App.base/Input/TextInput';
 import React from 'react';
-import { ReactComponent as RedBallIcon } from 'app.modules/assets/icons/ball/redBall.svg';
-import { ReactComponent as BlackBallIcon } from 'app.modules/assets/icons/ball/blackBall.svg';
+import RedBallIcon from '@/app.modules/assets/icons/ball/redBall.svg';
+import BlackBallIcon from '@/app.modules/assets/icons/ball/blackBall.svg';
 import { useRecoilState } from 'recoil';
 import { goalFormState } from '../store';
+import Label from '@/app.components/App.base/Input/Label';
+import TextInput from '@/app.components/App.base/Input/TextInput';
 
 // TODO: ErrorMessage Component 사용하기
 function SetBallArea() {

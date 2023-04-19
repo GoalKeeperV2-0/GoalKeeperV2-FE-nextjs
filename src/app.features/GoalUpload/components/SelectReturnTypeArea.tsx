@@ -1,12 +1,12 @@
-import Label from 'app.components/App.base/Input/Label';
 import React, { useState } from 'react';
-import { ReactComponent as ActiveHighSvg } from 'app.modules/assets/uploadGoal/activeHigh.svg';
-import { ReactComponent as ActiveLowSvg } from 'app.modules/assets/uploadGoal/activeLow.svg';
-import { ReactComponent as InActiveHighSvg } from 'app.modules/assets/uploadGoal/inactiveHigh.svg';
-import { ReactComponent as InActiveLowSvg } from 'app.modules/assets/uploadGoal/inactiveLow.svg';
+import ActiveHighSvg from '@/app.modules/assets/uploadGoal/activeHigh.svg';
+import ActiveLowSvg from '@/app.modules/assets/uploadGoal/activeLow.svg';
+import InActiveHighSvg from '@/app.modules/assets/uploadGoal/inactiveHigh.svg';
+import InActiveLowSvg from '@/app.modules/assets/uploadGoal/inactiveLow.svg';
 import { useRecoilState } from 'recoil';
-import { RewardType } from 'app.modules/api/goal';
 import { goalFormState } from '../store';
+import { RewardType } from '@/app.features/GoalManage/types';
+import Label from '@/app.components/App.base/Input/Label';
 
 // TODO: 통일성을 주는게 맞나?
 

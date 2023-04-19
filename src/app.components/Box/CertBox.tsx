@@ -1,18 +1,17 @@
-import { modalState } from 'app.modules/store/modal';
-import { formatDate } from 'app.modules/utils/formatDate';
-import { getDayDiff } from 'app.modules/utils/getDayDiff';
-import { getKoreaToday } from 'app.modules/utils/getKoreaToday';
 import React from 'react';
 import { useRecoilState } from 'recoil';
-import { GoalDataType, MappedCategory } from 'app.features/GoalManage/types';
-import { CertDataType } from 'app.features/Certification/types';
-import DetailCert from 'app.features/Certification/modalContents/DetailCert';
-import Badge from 'app.components/App.base/Badge';
-import { getRequireSuccess } from 'app.modules/utils/getRequireSuccess';
-import { useNavigate } from 'react-router-dom';
 import BoxLayout from './common/BoxLayout';
 import BottomLayout from './common/BottomLayout';
 import BottomText from './common/BottomText';
+import { CertDataType } from '@/app.features/Certification/types';
+import { getKoreaToday } from '@/app.modules/utils/getKoreaToday';
+import { modalState } from '@/app.modules/store/modal';
+import { formatDate } from '@/app.modules/utils/formatDate';
+import { getDayDiff } from '@/app.modules/utils/getDayDiff';
+import DetailCert from '@/app.features/Certification/modalContents/DetailCert';
+import { CategoryType, GoalDataType, MappedCategory } from '@/app.features/GoalManage/types';
+import Badge from '../App.base/Badge';
+import { getRequireSuccess } from '@/app.modules/utils/getRequireSuccess';
 
 interface Props {
 	certData: CertDataType;
@@ -56,11 +55,11 @@ function CertBox({ certData, alreadyVerified }: Props) {
 		if (isManyTimeGoal()) {
 			if (certData?.manyTimeGoal === undefined) return '';
 			const { categoryType } = certData.manyTimeGoal;
-			return MappedCategory[categoryType];
+			return MappedCategory[categoryType as CategoryType]; // TODO: as 없애기
 		}
 		if (certData?.oneTimeGoal === undefined) return '';
 		const { categoryType } = certData.oneTimeGoal;
-		return MappedCategory[categoryType];
+		return MappedCategory[categoryType as CategoryType];
 	};
 
 	return (

@@ -1,18 +1,14 @@
 import React, { useState } from 'react';
 
-import { Link } from 'react-router-dom';
-
-import BaseTemplate from 'app.components/BaseLayout';
-import TextInput from 'app.components/App.base/Input/TextInputRev';
-import { SERVICE_URL } from 'app.modules/constants/ServiceUrl';
-
-import { ReactComponent as LoginBanner } from 'app.modules/assets/banners/login.svg';
+import LoginBanner from 'app.modules/assets/banners/login.svg';
 import { GOOGLE_AUTH_URL } from '../constants';
 import { IForm, Action, loginFormState } from '../states/loginForm';
 import SubmitButton from '../../../app.components/SubmitButton';
 import GoogleLoginButton from '../components/GoogleLoginButton';
 import EmailInputArea from '../components/login/EmailInputArea';
 import PasswordInputArea from '../components/login/PasswordInputArea';
+import { SERVICE_URL } from '@/app.modules/constants/ServiceUrl';
+import Link from 'next/link';
 
 interface Props {
 	onSubmit: (event: React.SyntheticEvent) => void;
@@ -45,7 +41,7 @@ function LoginView({ error, onSubmit }: Props) {
 					<PasswordInputArea onChange={() => null} value="" />
 				</div>
 				<div className="flex justify-end w-full mb-[1.2rem] pc:mb-[2.4rem]  font-medium text-[1.2rem] leading-[2rem] pc:text-[1.8rem] pc:leading-[2.16rem] text-primaryBlack-300">
-					<Link to={SERVICE_URL.signUp}>
+					<Link href={SERVICE_URL.signUp}>
 						<span className="text-primaryOrange-200">회원가입</span>
 					</Link>
 				</div>

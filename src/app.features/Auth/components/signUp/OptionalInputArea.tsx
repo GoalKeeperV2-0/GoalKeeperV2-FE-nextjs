@@ -1,5 +1,5 @@
-import Label from 'app.components/App.base/Input/Label';
-import Select from 'app.components/Select';
+import Label from '@/app.components/App.base/Input/Label';
+import Select from '@/app.components/Select';
 import React from 'react';
 
 export type SexType = 'MAN' | 'WAMAN' | null;

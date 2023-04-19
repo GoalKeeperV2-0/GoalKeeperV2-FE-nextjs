@@ -1,10 +1,7 @@
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
-import { ReactComponent as LeaveAlertGraphic } from 'app.modules/assets/manageGoal/leaveAlert.svg';
-import ModalLayout from 'app.components/Modal/Layout';
-import { stopPropagation } from 'app.modules/utils/stopPropagation';
-import Button from 'app.components/App.base/Button';
+import LeaveAlertGraphic from '@/app.modules/assets/manageGoal/leaveAlert.svg';
+import Button from '@/app.components/App.base/Button';
+
 interface Props {
 	onCancel: () => void;
 	confirmActionText: string;

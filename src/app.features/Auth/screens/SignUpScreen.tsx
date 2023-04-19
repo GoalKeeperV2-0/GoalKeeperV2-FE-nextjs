@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
-import BaseTemplate from 'app.components/BaseLayout';
-import { ReactComponent as BackIcon } from 'app.modules/assets/icons/chevron-left.svg';
-import { Link } from 'react-router-dom';
-import { SERVICE_URL } from 'app.modules/constants/ServiceUrl';
-import { Oauth2RegisterBody } from 'app.modules/api/auth';
+import BackIcon from 'app.modules/assets/icons/chevron-left.svg';
+
 import { IForm, Action, signUpFormState } from '../states/signUpForm';
 import SubmitButton from '../../../app.components/SubmitButton';
 import EmailInputArea from '../components/signUp/EmailInputArea';
@@ -11,6 +8,9 @@ import PasswordInputArea from '../components/signUp/PasswordInputArea';
 import NicknameInputArea from '../components/signUp/NicknameInputArea';
 import OptionalInputArea from '../components/signUp/OptionalInputArea';
 import GoogleLoginButton from '../components/GoogleLoginButton';
+import { Oauth2RegisterBody } from '@/app.modules/api/auth';
+import { SERVICE_URL } from '@/app.modules/constants/ServiceUrl';
+import Link from 'next/link';
 
 interface Props {
 	onSubmit: (event: React.SyntheticEvent) => void;
@@ -67,7 +67,7 @@ function SignUpView({ error, onSubmit }: Props) {
 			</div>
 			<div className="hidden pc:flex space-x-[0.5rem] justify-end w-full mb-[2.4rem]  font-medium text-[1.8rem] leading-[2.16rem] text-primaryBlack-300">
 				<span>이미 골키퍼에 가입하셨나요?</span>
-				<Link to={SERVICE_URL.login}>
+				<Link href={SERVICE_URL.login}>
 					<span className="text-primaryOrange-200">로그인</span>
 				</Link>
 			</div>

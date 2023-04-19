@@ -1,6 +1,5 @@
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-import { SERVICE_URL } from 'app.modules/constants/ServiceUrl';
-import { modalState } from 'app.modules/store/modal';
+import { SERVICE_URL } from '@/app.modules/constants/ServiceUrl';
+import { modalState } from '@/app.modules/store/modal';
 import React from 'react';
 import { useRecoilState } from 'recoil';
 import Aside from './Aside';

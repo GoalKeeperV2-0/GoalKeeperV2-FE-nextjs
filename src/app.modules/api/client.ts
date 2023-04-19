@@ -1,6 +1,6 @@
-import { SERVICE_URL } from 'app.modules/constants/ServiceUrl';
-import { getCookie, setCookie } from 'app.modules/cookie';
 import axios, { AxiosHeaders } from 'axios';
+import { SERVICE_URL } from '../constants/ServiceUrl';
+import { getCookie } from '../cookie';
 
 const client = axios.create({
 	baseURL: 'https://api.goalkeeper.co.kr/api', // TODO: https?

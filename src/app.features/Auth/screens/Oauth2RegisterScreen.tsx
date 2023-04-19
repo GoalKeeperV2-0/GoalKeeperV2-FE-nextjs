@@ -1,10 +1,10 @@
 import { UseMutateFunction } from '@tanstack/react-query';
-import { Oauth2RegisterBody } from 'app.modules/api/auth';
 import { AxiosResponse } from 'axios';
 import React, { useState } from 'react';
 import NicknameInputArea from '../components/signUp/NicknameInputArea';
 import OptionalInputArea from '../components/signUp/OptionalInputArea';
 import SubmitButton from '../../../app.components/SubmitButton';
+import { Oauth2RegisterBody } from '@/app.modules/api/auth';
 
 interface Props {
 	// TODO: 타입 범용적으로 정의해두기

@@ -1,5 +1,5 @@
-import { GoalType, PostManyTimeGoal } from 'app.modules/api/goal';
-import { getTodayString } from 'app.modules/utils/getTodayString';
+import { GoalType, PostManyTimeGoal } from '@/app.modules/api/goal';
+import { getTodayString } from '@/app.modules/utils/getTodayString';
 import { atom } from 'recoil';
 export interface IGoalForm {
 	goalType: GoalType | null;

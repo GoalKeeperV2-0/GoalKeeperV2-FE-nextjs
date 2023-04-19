@@ -1,7 +1,6 @@
-/* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, { useState, useRef, useEffect, BaseSyntheticEvent } from 'react';
-import { ReactComponent as CaretIcon } from 'app.modules/assets/icons/caret.svg';
-import { stopPropagation } from 'app.modules/utils/stopPropagation';
+import CaretIcon from 'app.modules/assets/icons/caret.svg';
+import { stopPropagation } from '@/app.modules/utils/stopPropagation';
 
 // export type DefaultValue = string | number | readonly string[] | undefined;
 
@@ -55,7 +54,6 @@ export default function Select<T>({ options, name, value, onSelect, placeholder 
 				</>
 			</button>
 			{isOpen && (
-				// eslint-disable-next-line jsx-a11y/click-events-have-key-events
 				<div
 					onClick={stopPropagation}
 					className="absolute top-0 options py-[2.4rem] pl-[2.4rem] pr-[0.8rem]  w-full border-[0.1rem] border-primaryBlack-100 bg-primaryWhite rounded-[0.8rem]"

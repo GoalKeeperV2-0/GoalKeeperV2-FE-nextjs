@@ -1,10 +1,9 @@
-import Button from 'app.components/App.base/Button';
-import Label from 'app.components/App.base/Input/Label';
-import Calendar from 'app.components/Calendar';
-import { goalFormState } from 'app.features/GoalUpload/store';
-import { getDayDiff } from 'app.modules/utils/getDayDiff';
+import Label from '@/app.components/App.base/Input/Label';
+import Calendar from '@/app.components/Calendar';
+import { getDayDiff } from '@/app.modules/utils/getDayDiff';
 import React, { useEffect } from 'react';
 import { useRecoilState } from 'recoil';
+import { goalFormState } from '../../store';
 import ManytimeGoalStatusMessages from './ManytimeGoalStatusMessages';
 import OnetimeGoalStatusMessage from './OneTimeGoalStatusMessage';
 // TODO: 새로고침했을 때 , 날짜설정 버그 생기는거 다 고치기
@@ -39,7 +38,7 @@ function SetTermArea() {
 	const deleteCertDateHandler = (date: string) => {
 		setGoalForm({
 			...goalForm,
-			certDates: certDates.filter((item) => item !== date),
+			certDates: certDates.filter((item: string) => item !== date),
 		});
 	};
 	const getStatus = () => {

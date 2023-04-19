@@ -1,6 +1,5 @@
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-import { modalState } from 'app.modules/store/modal';
-import { stopPropagation } from 'app.modules/utils/stopPropagation';
+import { modalState } from '@/app.modules/store/modal';
+import { stopPropagation } from '@/app.modules/utils/stopPropagation';
 import React, { useEffect } from 'react';
 import { useRecoilState } from 'recoil';
 // TODO: 모달 렌더링 최적화 공부하기
@@ -14,12 +13,10 @@ function ModalLayout() {
 		};
 	}, []);
 	return (
-		// eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
 		<div
 			onClick={() => setModal({ ...modal, isOpen: false })}
 			className="bg-primaryBlack-500 bg-opacity-20 fixed inset-0 z-[200]  "
 		>
-			{/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
 			<div
 				aria-modal
 				onClick={stopPropagation}

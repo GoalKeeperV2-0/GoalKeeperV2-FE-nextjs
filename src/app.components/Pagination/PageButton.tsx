@@ -1,5 +1,5 @@
-import Button from 'app.components/App.base/Button';
 import React from 'react';
+import Button from '../App.base/Button';
 interface Props {
 	isActive: boolean;
 	onClick: () => void;

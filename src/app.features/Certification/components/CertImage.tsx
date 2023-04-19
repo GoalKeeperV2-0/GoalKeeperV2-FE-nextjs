@@ -1,8 +1,4 @@
-import Label from 'app.components/App.base/Input/Label';
-import { getDayDiff } from 'app.modules/utils/getDayDiff';
 import React from 'react';
-import { ReactComponent as CameraIcon } from 'app.modules/assets/manageGoal/camera.svg';
-import { CertType } from 'app.features/GoalManage/types';
 
 interface Props {
 	picture: string;

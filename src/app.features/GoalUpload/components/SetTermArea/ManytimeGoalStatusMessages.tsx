@@ -1,5 +1,5 @@
-import Button from 'app.components/App.base/Button';
-import { ReactComponent as CancelIcon } from 'app.modules/assets/icons/calendar/cancel.svg';
+import Button from '@/app.components/App.base/Button';
+import CancelIcon from '@/app.modules/assets/icons/calendar/cancel.svg';
 import React from 'react';
 interface Props {
 	status: 'init' | 'selected';
@@ -44,6 +44,7 @@ function ManytimeGoalStatusMessages({ status, term, endDate, certDates, deleteCe
 									certDates.length < 3
 										? `최소 인증횟수까지 ${3 - certDates.length}회 남았어요`
 										: '최소 인증횟수를 모두 달성했어요 👍🏻'
+									// eslint-disable-next-line no-mixed-spaces-and-tabs
 							  }`
 							: '최소 인증횟수는 4회입니다'}
 					</Button>

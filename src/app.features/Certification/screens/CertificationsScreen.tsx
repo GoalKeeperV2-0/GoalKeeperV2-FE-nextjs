@@ -1,10 +1,10 @@
-import CertBox from 'app.components/Box/CertBox';
-import FilterButton from 'app.components/FilterButton';
-import Pagination from 'app.components/Pagination';
-import { CategoryType, MappedCategory } from 'app.features/GoalManage/types';
-import { SERVICE_URL } from 'app.modules/constants/ServiceUrl';
+import CertBox from '@/app.components/Box/CertBox';
+import FilterButton from '@/app.components/FilterButton';
+import Pagination from '@/app.components/Pagination';
+import { CategoryType, MappedCategory } from '@/app.features/GoalManage/types';
+import { SERVICE_URL } from '@/app.modules/constants/ServiceUrl';
+import { useRouter } from 'next/router';
 import React, { useState } from 'react';
-import { useNavigate, useNavigation } from 'react-router-dom';
 
 import { CertDataType } from '../types';
 
@@ -30,7 +30,7 @@ function CertificationsScreen({
 	onPageChange,
 	totalPages,
 }: Props) {
-	const navigate = useNavigate();
+	const router = useRouter();
 	return (
 		<div className="space-y-[3rem]">
 			<h3>목표인증</h3>
@@ -45,11 +45,11 @@ function CertificationsScreen({
 							onClick={() => {
 								if (key === 'ALL') {
 									onCertFilterChange(null);
-									navigate(`${SERVICE_URL.certifications}`);
+									router.push(`${SERVICE_URL.certifications}`);
 									return;
 								}
 								console.log(123123131231);
-								navigate(`${SERVICE_URL.certifications}?category=${key}`);
+								router.push(`${SERVICE_URL.certifications}?category=${key}`);
 								onCertFilterChange(key as CategoryType);
 							}}
 						>

@@ -1,5 +1,5 @@
-import Label from 'app.components/App.base/Input/Label';
-import { getDayDiff } from 'app.modules/utils/getDayDiff';
+import Label from '@/app.components/App.base/Input/Label';
+import { getDayDiff } from '@/app.modules/utils/getDayDiff';
 import React from 'react';
 import { CertType } from '../types';
 

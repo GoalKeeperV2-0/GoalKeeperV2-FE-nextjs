@@ -1,10 +1,10 @@
-import ArrowButton from 'app.components/Pagination/ArrowButton';
-import { formatDate } from 'app.modules/utils/formatDate';
 import React, { useEffect, useState } from 'react';
-import { ReactComponent as ResetIcon } from 'app.modules/assets/icons/calendar/reset.svg';
-import { getKoreaToday } from 'app.modules/utils/getKoreaToday';
-import { getDayDiff } from 'app.modules/utils/getDayDiff';
-import { getTodayString } from 'app.modules/utils/getTodayString';
+import ResetIcon from '@/app.modules/assets/icons/calendar/reset.svg';
+import { getKoreaToday } from '@/app.modules/utils/getKoreaToday';
+import { formatDate } from '@/app.modules/utils/formatDate';
+import { getDayDiff } from '@/app.modules/utils/getDayDiff';
+import { getTodayString } from '@/app.modules/utils/getTodayString';
+import ArrowButton from '../Pagination/ArrowButton';
 
 const getPrevMonthLastDayInfo = (curYear: number, curMonth: number) => {
 	// getDay() -> 월요일이 1번

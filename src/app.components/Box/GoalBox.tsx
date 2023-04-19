@@ -1,16 +1,16 @@
-import { modalState } from 'app.modules/store/modal';
-import { getDayDiff } from 'app.modules/utils/getDayDiff';
 import React from 'react';
 import { useRecoilState } from 'recoil';
-import DetailGoal from 'app.features/GoalManage/modalContents/DetailGoal';
-import { GoalDataType, GoalStateType, MappedState } from 'app.features/GoalManage/types';
-import { getDdayMessage } from 'app.features/GoalManage/utils/getDdayMessage';
-import { getTodayString } from 'app.modules/utils/getTodayString';
-import Badge from 'app.components/App.base/Badge';
 import BoxImage from './common/BoxImage';
 import BoxLayout from './common/BoxLayout';
 import BottomLayout from './common/BottomLayout';
 import BottomText from './common/BottomText';
+import { GoalDataType, GoalStateType, MappedState } from '@/app.features/GoalManage/types';
+import { getTodayString } from '@/app.modules/utils/getTodayString';
+import { modalState } from '@/app.modules/store/modal';
+import DetailGoal from '@/app.features/GoalManage/modalContents/DetailGoal';
+import { getDayDiff } from '@/app.modules/utils/getDayDiff';
+import Badge from '../App.base/Badge';
+import { getDdayMessage } from '@/app.features/GoalManage/utils/getDdayMessage';
 
 interface Props {
 	goalData: GoalDataType;

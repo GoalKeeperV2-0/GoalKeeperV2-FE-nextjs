@@ -1,10 +1,11 @@
-import Label from 'app.components/App.base/Input/Label';
-import { getDayDiff } from 'app.modules/utils/getDayDiff';
 import React from 'react';
-import { ReactComponent as CameraIcon } from 'app.modules/assets/manageGoal/camera.svg';
-import { ReactComponent as RetryIcon } from 'app.modules/assets/manageGoal/retry.svg';
-import { getProgressText, getRequireSuccess } from 'app.modules/utils/getRequireSuccess';
+import CameraIcon from '@/app.modules/assets/manageGoal/camera.svg';
+import RetryIcon from '@/app.modules/assets/manageGoal/retry.svg';
+
 import { CertType } from '../types';
+import { getDayDiff } from '@/app.modules/utils/getDayDiff';
+import { getProgressText } from '@/app.modules/utils/getRequireSuccess';
+import Label from '@/app.components/App.base/Input/Label';
 
 interface Props {
 	todayString: string;

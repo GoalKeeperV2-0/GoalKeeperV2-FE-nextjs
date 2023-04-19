@@ -1,12 +1,12 @@
-/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { SERVICE_URL } from 'app.modules/constants/ServiceUrl';
-import { ReactComponent as ServiceLogo } from 'app.modules/assets/header/serviceLogo.svg';
-import { ReactComponent as AlarmIcon } from 'app.modules/assets/header/alarm.svg';
-import { ReactComponent as UserIcon } from 'app.modules/assets/header/user.svg';
-import { ReactComponent as MenuIcon } from 'app.modules/assets/header/hamburger.svg';
+
+import ServiceLogo from '@/app.modules/assets/header/serviceLogo.svg';
+import AlarmIcon from '@/app.modules/assets/header/alarm.svg';
+import UserIcon from '@/app.modules/assets/header/user.svg';
+import MenuIcon from '@/app.modules/assets/header/hamburger.svg';
 import RouteModal from './Modal/RouteModal';
+import { SERVICE_URL } from '@/app.modules/constants/ServiceUrl';
+import Link from 'next/link';
 
 // import useDetectClose from 'hooks/useDetectClose';
 
@@ -47,7 +47,7 @@ export default function Header() {
 	return (
 		<header className="w-full  h-[8.6rem] flex mx-auto  justify-between items-center">
 			<div className="mr-[15.1rem] h-full flex items-center">
-				<Link className="logo-link" to={SERVICE_URL.home}>
+				<Link className="logo-link" href={SERVICE_URL.home}>
 					<ServiceLogo className="pc:max-w-[15.7rem] max-w-[11.2rem]" />
 				</Link>
 			</div>
@@ -57,7 +57,7 @@ export default function Header() {
 						{MENU_LIST.map((menu, index): React.ReactElement => {
 							return (
 								<li key={index} className="font-[600] pc:min-w-[6.5rem]">
-									<Link to={menu.path}>{menu.title}</Link>
+									<Link href={menu.path}>{menu.title}</Link>
 								</li>
 							);
 						})}
@@ -70,7 +70,7 @@ export default function Header() {
 					</div>
 
 					<div className="relative">
-						<Link to={SERVICE_URL.login}>
+						<Link href={SERVICE_URL.login}>
 							<UserIcon />
 							<RouteModal title="로그인 관리" isOpen={false} setIsOpen={() => null} />
 						</Link>

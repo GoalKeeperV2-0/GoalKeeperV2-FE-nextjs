@@ -1,6 +1,6 @@
-import Button from 'app.components/App.base/Button';
-import Label from 'app.components/App.base/Input/Label';
-import { GoalType } from 'app.modules/api/goal';
+import Button from '@/app.components/App.base/Button';
+import Label from '@/app.components/App.base/Input/Label';
+import { GoalType } from '@/app.modules/api/goal';
 import React, { useState } from 'react';
 import { useRecoilState } from 'recoil';
 import { goalFormState } from '../store';

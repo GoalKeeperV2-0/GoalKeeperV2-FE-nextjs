@@ -1,9 +1,7 @@
+import SubmitButton from '@/app.components/SubmitButton';
+import { postManytimeGoal, PostOnetimeGoal, postOnetimeGoal } from '@/app.modules/api/goal';
+import { getTodayString } from '@/app.modules/utils/getTodayString';
 import { useMutation, QueryCache, useQueryClient } from '@tanstack/react-query';
-import SubmitButton from 'app.components/SubmitButton';
-import { postManytimeGoal, PostOnetimeGoal, postOnetimeGoal } from 'app.modules/api/goal';
-import { useMyGoals } from 'app.modules/hooks/useMyGoals';
-import { useRetchOnPostGoal } from 'app.modules/hooks/useRetchOnPostGoal';
-import { getTodayString } from 'app.modules/utils/getTodayString';
 import React, { useEffect, useState } from 'react';
 import { useRecoilState, useResetRecoilState } from 'recoil';
 import SelectCategoryArea from '../components/SelectCategoryArea';
