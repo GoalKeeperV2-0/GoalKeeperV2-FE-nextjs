@@ -1,13 +1,9 @@
-import BaseLayout from '@/app.components/BaseLayout';
+import BaseLayout from '@/app.components/App.base/Layout';
 import LoginScreen from '@/app.features/Auth/screens/LoginScreen';
 import React, { useEffect } from 'react';
 
 function LoginPage() {
-	return (
-		<BaseLayout>
-			<LoginScreen onSubmit={() => ''} error="" />
-		</BaseLayout>
-	);
+	return <LoginScreen onSubmit={() => ''} error="" />;
 }
 
 export default LoginPage;

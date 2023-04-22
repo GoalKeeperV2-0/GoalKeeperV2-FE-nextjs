@@ -2,7 +2,6 @@ import React from 'react';
 import BallIcon from '@/app.modules/assets/icons/ball/blackBall.svg';
 import { useRecoilState } from 'recoil';
 import OverviewTemplate from './OverviewTemplate';
-import Button from '../App.base/Button';
 import { getUserProfile } from '@/app.modules/api/user';
 import { modalState } from '@/app.modules/store/modal';
 import { getTodayCertGoal, getUserPoints, getUserStatistics } from '@/app.modules/api/overview';
@@ -12,6 +11,7 @@ import { SERVICE_URL } from '@/app.modules/constants/ServiceUrl';
 import { useQuery } from '@tanstack/react-query';
 import DetailGoal from '@/app.features/GoalManage/modalContents/DetailGoal';
 import UploadGoal from '@/app.features/GoalUpload/modalContents/UploadGoal';
+import Button from '../App.base/Button';
 // TODO: field & value mapping 시키기
 function Aside() {
 	const [modal, setModal] = useRecoilState(modalState);
@@ -69,7 +69,7 @@ function Aside() {
 	};
 
 	return (
-		<aside className="h-fit min-w-[27.8rem] mr-[2.8rem] rounded-[1.6rem] w-[27.8rem] p-[2.4rem] border-[0.1rem] border-borderGray  bg-white space-y-[2rem]">
+		<aside className="h-fit w-full   rounded-[1.6rem] p-[2.4rem] border-[0.1rem] border-borderGray  bg-white space-y-[2rem]">
 			<div className="space-y-[0.4rem]">
 				<div className="pc:text-body6-pc ">{user?.name}</div>
 				<div className="pc:text-body2-pc text-primaryOrange-200 ">{user?.email}</div>
