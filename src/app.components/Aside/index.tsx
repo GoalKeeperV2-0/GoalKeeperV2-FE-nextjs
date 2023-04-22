@@ -69,7 +69,7 @@ function Aside() {
 	};
 
 	return (
-		<aside className="h-fit w-full   rounded-[1.6rem] p-[2.4rem] border-[0.1rem] border-borderGray  bg-white space-y-[2rem]">
+		<aside className=" h-fit w-[27.8rem]   rounded-[1.6rem] p-[2.4rem] border-[0.1rem] border-borderGray  bg-white space-y-[2rem]">
 			<div className="space-y-[0.4rem]">
 				<div className="pc:text-body6-pc ">{user?.name}</div>
 				<div className="pc:text-body2-pc text-primaryOrange-200 ">{user?.email}</div>
@@ -118,9 +118,8 @@ function Aside() {
 						</Button>
 					</ul>
 				</OverviewTemplate>
-
 				<OverviewTemplate title="포인트">
-					<ul className="p-[1.6rem] rounded-[0.8rem] bg-buttonGray-100 pc:text-body1-pc space-y-[1.6rem]">
+					<ul className="p-[1.6rem] rounded-[0.8rem] bg-buttonGray-100 text-body1-pc space-y-[1.6rem]">
 						<li className="flex justify-between items-center">
 							<div className="flex items-center text-primaryOrange-200">사용 가능</div>
 							<div className="flex items-center space-x-[0.6rem]">
@@ -129,7 +128,7 @@ function Aside() {
 							</div>
 						</li>
 						{Object.entries(MappedCategory).map(([key, value], index) => (
-							<li className="flex justify-between items-center pc:text-body1-pc" key={index}>
+							<li className="flex justify-between items-center" key={index}>
 								<div>{value}</div>
 								<div className="flex items-center space-x-[0.6rem]">
 									<span>{userPoints?.categoryPoints?.[key].toLocaleString()}</span>
@@ -145,3 +144,13 @@ function Aside() {
 }
 
 export default Aside;
+/*
+
+
+					
+						
+					
+			
+			
+
+*/

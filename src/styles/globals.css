@@ -17,12 +17,11 @@
  }
 
 
-  body{
-     width:100vw;
+body{
      height:100vh;
      font-size:1.6rem;
     
-  }
+}
 
   h1 {
       font-size: 4.4rem;

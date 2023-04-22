@@ -39,7 +39,7 @@ function Oauth2CallbackPage() {
 	useEffect(() => {
 		console.log('인가코드 : ', new URL(document.location.toString()).searchParams.get('code') as string);
 	}, []);
-	return <div>OauthCallback</div>;
+	return <div />;
 }
 
 export default Oauth2CallbackPage;

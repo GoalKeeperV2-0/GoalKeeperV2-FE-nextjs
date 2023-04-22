@@ -16,21 +16,13 @@ export default function Layout({ children }: Props) {
 	const router = useRouter();
 	return (
 		<>
-			<Header />
-			<div className=" box-border  w-screen pc:min-w-[120rem] pc:w-[120rem] pc:max-w-[120rem] h-screen  mx-auto  bg-green-500 pt-[3.3rem] pc:pt-[15.6rem] flex space-x-[3rem]">
-				<aside className=" h-fit w-[27.8rem]   rounded-[1.6rem] p-[2.4rem] border-[0.1rem] border-borderGray  bg-white space-y-[2rem]">
-					aisde
-				</aside>
-				<main className="bg-purple-500 w-[89.2rem]">main</main>
+			<div className="pc:min-w-[120rem] pc:w-[120rem] pc:max-w-[120rem] mx-auto ">
+				<Header />
+				<div className="pt-[3.3rem] py-[1.5rem] pc:py-[7rem]  flex space-x-[3rem]">
+					<Aside />
+					<main className="pc:min-w-[89.2rem pc:w-[89.2rem]">{children}</main>
+				</div>
 			</div>
 		</>
 	);
 }
-//
-/*
-<Aside />
-				<main className="w-full">{children}</main>
-
-	{modal.isOpen && <ModalSection />}
-
-*/
