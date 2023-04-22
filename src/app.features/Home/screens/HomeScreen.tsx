@@ -12,11 +12,9 @@ interface Props {
 function HomeScreen({ certs, alreadyVerification }: Props) {
 	return (
 		<>
-			{/*
 			<section className="">
 				<HomeBanner1 />
 			</section>
-			*/}
 
 			<section className="mt-[3rem] space-y-[3rem]">
 				<div className="flex  justify-between items-center">
