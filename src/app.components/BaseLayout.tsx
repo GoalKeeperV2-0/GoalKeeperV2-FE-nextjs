@@ -1,5 +1,6 @@
 import { SERVICE_URL } from '@/app.modules/constants/ServiceUrl';
 import { modalState } from '@/app.modules/store/modal';
+import { useRouter } from 'next/router';
 import React from 'react';
 import { useRecoilState } from 'recoil';
 import Aside from './Aside';
@@ -14,12 +15,13 @@ interface TemplateProps {
 const ASIDE_NOT_INCLUDE = [SERVICE_URL.login, SERVICE_URL.signUp, SERVICE_URL.oauth2Register];
 export default function BaseTemplate({ isAdmin, children }: TemplateProps) {
 	const [modal, setModal] = useRecoilState(modalState);
+	const router = useRouter();
 	return (
 		<div className="main pc:max-w-[120rem] mx-auto  pb-[2rem] px-[2rem] pc:px-0">
 			<Header />
 
 			<main className="flex mt-[3.3rem] pc:mt-[7.4rem]">
-				{!ASIDE_NOT_INCLUDE.includes(window.location.pathname) && <Aside />}
+				{!ASIDE_NOT_INCLUDE.includes('') && <Aside />}
 				<div className="min-w-[89.4rem] w-[89.4rem]">{children}</div>
 			</main>
 			{modal.isOpen && <ModalSection />}

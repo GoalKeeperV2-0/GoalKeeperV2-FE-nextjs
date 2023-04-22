@@ -1,4 +1,67 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+* {
+    box-sizing: border-box;
+  }
 
+@font-face {
+    font-family: "AppleSDGothicNeo";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../app.modules/assets/fonts/AppleSDGothicNeo/AppleSDGothicNeoM.ttf") format("truetype");
+} 
+
+ html{
+    font-family: 'AppleSDGothicNeo';
+    font-size: 62.5%;
+    
+   
+ }
+
+
+  body{
+     width:100vw;
+     height:100vh;
+     font-size:1.6rem;
+    
+  }
+
+  h1 {
+      font-size: 4.4rem;
+      font-weight: 800;
+      line-height: 5.3rem;
+  }
+  h2 { 
+      font-size: 3.2rem;
+      font-weight: 900;
+      line-height: 4.4rem;
+  }
+  
+  h3 {  
+      font-size: 3rem;
+      font-weight: 800;
+      line-height: 3.6rem;
+  }
+  @media (max-width: 425px){
+    h3 {  
+        font-size: 2rem;
+        line-height: 2.4rem;
+    }
+  }
+  h4 {
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 3.6rem; 
+  }
+  
+  
+   @media screen and (max-width: 425px) { 
+      body,
+      button,
+      input,
+      select,
+      table,
+      textarea {
+          font-size: 1.2rem;
+      }
+  
+  } 
+  
