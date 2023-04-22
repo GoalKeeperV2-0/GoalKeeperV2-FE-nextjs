@@ -7,22 +7,14 @@ const Home: NextPage = () => {
 	const { data: certs } = useCertList(0);
 	return (
 		<>
-			<HomeScreen
-				certs={certs?.certificationResponses?.content?.slice(0, 6)}
-				alreadyVerification={certs?.alreadyVerification}
-			/>
+			<BaseLayout>
+				<HomeScreen
+					certs={certs?.certificationResponses?.content?.slice(0, 6)}
+					alreadyVerification={certs?.alreadyVerification}
+				/>
+			</BaseLayout>
 		</>
 	);
 };
 
 export default Home;
-/*
-<BaseLayout>
-			<HomeScreen
-				certs={certs?.certificationResponses?.content?.slice(0, 6)}
-				alreadyVerification={certs?.alreadyVerification}
-			/>
-		</BaseLayout>
-
-
-*/

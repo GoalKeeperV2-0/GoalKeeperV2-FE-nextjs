@@ -6,43 +6,43 @@
 @layer components {
 
     .text-body1-pc{
-       @apply font-medium pc:text-[1.6rem] pc:leading-[1.9rem];
+       @apply font-medium pc:text-[1.6rem] ;
     }
     .text-body2-pc{
-       @apply font-semibold pc:text-[1.6rem] pc:leading-[1.9rem];
+       @apply font-semibold pc:text-[1.6rem] ;
     }
     .text-body3-pc{
-       @apply font-normal pc:text-[1.8rem] pc:leading-[2.2rem];
+       @apply font-normal pc:text-[1.8rem] ;
     }
     .text-body4-pc{
-       @apply font-medium pc:text-[1.8rem] pc:leading-[2.2rem];
+       @apply font-medium pc:text-[1.8rem] ;
     }
     .text-body5-pc{
-       @apply font-bold pc:text-[1.8rem] pc:leading-[2.2rem];
+       @apply font-bold pc:text-[1.8rem] ;
     }
     .text-body6-pc{
-       @apply font-semibold pc:text-[2.2rem] pc:leading-[3rem];
+       @apply font-semibold pc:text-[2.2rem] ;
     }
     .text-body7-pc{
-      @apply font-bold pc:text-[2.4rem] pc:leading-[3rem];
+      @apply font-bold pc:text-[2.4rem];
    }
     .text-body1-mo{
-       @apply font-medium text-[1.6rem] leading-[1.9rem];
+       @apply font-medium text-[1.6rem] ;
     }
     .text-body2-mo{
-       @apply font-semibold text-[1.6rem] leading-[1.9rem];
+       @apply font-semibold text-[1.6rem] ;
     }
     .text-body3-mo{
-       @apply font-normal text-[1.2rem] leading-[1.44rem];
+       @apply font-normal text-[1.2rem] ;
     }
     .text-body4-mo{
-       @apply font-semibold text-[1.2rem] leading-[1.4rem];
+       @apply font-semibold text-[1.2rem] ;
     }
     .text-body5-mo{
-       @apply font-medium text-[1.4rem] leading-[2rem];
+       @apply font-medium text-[1.4rem];
     }
     .text-body6-mo{
-       @apply font-semibold text-[2.2rem] leading-[3rem];
+       @apply font-semibold text-[2.2rem] ;
     }
   
 }
