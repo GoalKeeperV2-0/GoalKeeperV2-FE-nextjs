@@ -13,13 +13,22 @@ interface Props {
 function HomeScreen({ certs, alreadyVerification }: Props) {
 	return (
 		<>
-			<section className="">
+			<section>
 				<Image
 					src={'/images/home/BN.svg'}
 					alt={'Welcome! 골키퍼를 소개할게요'}
 					width={892}
 					height={269}
-					className="w-full"
+					className="w-full hidden pc:block"
+				/>
+			</section>
+			<section>
+				<Image
+					src={'/images/home/BNM.svg'}
+					alt={'Welcome! 골키퍼를 소개할게요'}
+					width={320}
+					height={147}
+					className="w-full pc:hidden"
 				/>
 			</section>
 

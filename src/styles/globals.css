@@ -39,7 +39,7 @@ body{
       font-weight: 800;
       line-height: 3.6rem;
   }
-  @media (max-width: 425px){
+  @media (max-width: 510px){
     h3 {  
         font-size: 2rem;
         line-height: 2.4rem;
@@ -52,7 +52,7 @@ body{
   }
   
   
-   @media screen and (max-width: 425px) { 
+   @media screen and (max-width: 510px) { 
       body,
       button,
       input,
