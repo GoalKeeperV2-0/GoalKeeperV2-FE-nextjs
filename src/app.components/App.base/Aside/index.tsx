@@ -1,5 +1,4 @@
 import React from 'react';
-import BallIcon from '@/app.modules/assets/icons/ball/blackBall.svg';
 import { useRecoilState } from 'recoil';
 import OverviewTemplate from './OverviewTemplate';
 import { getUserProfile } from '@/app.modules/api/user';
@@ -65,6 +64,16 @@ function Aside() {
 			isOpen: false,
 		});
 	};
+	const PointData = [
+		{
+			field: '사용 가능',
+			value: userPoints?.usablePoint,
+		},
+		...Object.entries(MappedCategory).map(([key, field]) => ({
+			field,
+			value: userPoints?.categoryPoints?.[key],
+		})),
+	];
 	const openModalHandler = (goalData: GoalDataType) => {
 		setModal({ render: <DetailGoal goal={goalData} onCloseModal={closeModalHandler} />, isOpen: true });
 	};
@@ -121,19 +130,12 @@ function Aside() {
 				</OverviewTemplate>
 				<OverviewTemplate title="포인트">
 					<ul className="p-[1.6rem] rounded-[0.8rem] bg-buttonGray-100 text-body1-pc space-y-[1.6rem]">
-						<li className="flex justify-between items-center">
-							<div className="flex items-center text-primaryOrange-200">사용 가능</div>
-							<div className="flex items-center space-x-[0.6rem]">
-								<span>{userPoints?.usablePoint.toLocaleString()}</span>
-								<BallIcon className="w-[1.6rem] h-[1.6rem]" />
-							</div>
-						</li>
-						{Object.entries(MappedCategory).map(([key, value], index) => (
-							<li className="flex justify-between items-center" key={index}>
-								<div>{value}</div>
+						{PointData.map((item, index) => (
+							<li key={index} className="flex justify-between items-center first:text-primaryOrange-200">
+								<div>{item?.field}</div>
 								<div className="flex items-center space-x-[0.6rem]">
-									<span>{userPoints?.categoryPoints?.[key].toLocaleString()}</span>
-									<BallIcon className="w-[1.6rem] h-[1.6rem]" />
+									<span>{item.value?.toLocaleString()}</span>
+									<img alt="" src="/images/aside/ball.svg" className="mt-[0.3rem]" />
 								</div>
 							</li>
 						))}
@@ -145,13 +147,3 @@ function Aside() {
 }
 
 export default Aside;
-/*
-
-
-					
-						
-					
-			
-			
-
-*/
