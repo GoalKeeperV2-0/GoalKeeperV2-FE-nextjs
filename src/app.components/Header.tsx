@@ -85,7 +85,13 @@ export default function Header() {
 
 			<div className="block pc:hidden">
 				<button type="button" onClick={handleClickOfSideMenu} aria-label={isOpenSideMenu ? '메뉴 닫기' : '메뉴 열기'}>
-					<Image alt="" src="/images/header/hamburger.png" width={16} height={12} className="min-w-[1.6rem]" />
+					<Image
+						alt=""
+						src="/images/header/hamburger.png"
+						width={16}
+						height={12}
+						className="min-w-[1.6rem] mb-[0.3rem]"
+					/>
 				</button>
 			</div>
 

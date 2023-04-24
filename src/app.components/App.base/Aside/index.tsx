@@ -79,7 +79,7 @@ function Aside() {
 	};
 
 	return (
-		<aside className=" h-fit w-[27.8rem]   rounded-[1.6rem] p-[2.4rem] border-[0.1rem] border-borderGray  bg-white space-y-[2rem]">
+		<aside className="hidden pc:block h-fit w-[27.8rem]   rounded-[1.6rem] p-[2.4rem] border-[0.1rem] border-borderGray  bg-white space-y-[2rem]">
 			<div className="space-y-[0.4rem]">
 				<div className="pc:text-body6-pc ">{user?.name}</div>
 				<div className="pc:text-body2-pc text-primaryOrange-200 ">{user?.email}</div>

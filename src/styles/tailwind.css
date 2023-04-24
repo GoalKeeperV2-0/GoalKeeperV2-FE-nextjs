@@ -4,7 +4,12 @@
 
 
 @layer components {
-
+   .text-title1-pc {  
+      @apply pc:text-[3rem] pc:font-[800]
+  }
+   .text-title1-mo {
+      @apply text-[2rem] font-[800]
+   }
     .text-body1-pc{
        @apply font-medium pc:text-[1.6rem] ;
     }
