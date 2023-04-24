@@ -1,6 +1,4 @@
 import { useQueries, useQuery } from '@tanstack/react-query';
-import client from 'app.modules/api/client';
-import { getGoalAll } from 'app.modules/api/goal';
 import { useEffect } from 'react';
 import { useMyGoals } from './useMyGoals';
 
