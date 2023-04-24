@@ -11,7 +11,8 @@ import { SERVICE_URL } from '@/app.modules/constants/ServiceUrl';
 import { useQuery } from '@tanstack/react-query';
 import DetailGoal from '@/app.features/GoalManage/modalContents/DetailGoal';
 import UploadGoal from '@/app.features/GoalUpload/modalContents/UploadGoal';
-import Button from '../App.base/Button';
+import Button from '../Button';
+
 // TODO: field & value mapping 시키기
 function Aside() {
 	const [modal, setModal] = useRecoilState(modalState);

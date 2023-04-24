@@ -1,4 +1,3 @@
-import Aside from '@/app.components/Aside';
 import Header from '@/app.components/Header';
 import ModalSection from '@/app.components/Modal/ModalSection';
 import { SERVICE_URL } from '@/app.modules/constants/ServiceUrl';
@@ -6,6 +5,7 @@ import { modalState } from '@/app.modules/store/modal';
 import { useRouter } from 'next/router';
 import React from 'react';
 import { useRecoilState } from 'recoil';
+import Aside from '../Aside';
 
 interface Props {
 	children: React.ReactNode;
