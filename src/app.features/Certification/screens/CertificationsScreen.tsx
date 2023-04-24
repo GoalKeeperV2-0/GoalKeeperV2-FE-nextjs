@@ -33,7 +33,7 @@ function CertificationsScreen({
 	const router = useRouter();
 	return (
 		<div className="space-y-[3rem]">
-			<h3>목표인증</h3>
+			<h1 className=" text-title1-mo pc:text-title1-pc">목표인증</h1>
 
 			<ul className="flex space-x-[0.8rem]">
 				{Object.entries(mappedCertFilter).map(([key, value]) => (

@@ -18,7 +18,7 @@ function ManageGoalScreen({ myGoals, onGoalFilterChange, goalFilter, curPage, on
 
 	return (
 		<div className="space-y-[3rem]">
-			<h3>목표관리</h3>
+			<h1 className=" text-title1-mo pc:text-title1-pc">목표관리</h1>
 
 			<ul className="flex space-x-[0.8rem]">
 				{Object.entries({ ALL: '전체', ...MappedCategory })?.map(([key, value]) => (
