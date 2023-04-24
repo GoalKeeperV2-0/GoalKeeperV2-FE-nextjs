@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { getGoalAll } from 'app.modules/api/goal';
+import { getGoalAll } from '@/app.modules/api/goal';
 import { useEffect } from 'react';
 
 export const useMyGoals = (page: number, enabled = true) => {
