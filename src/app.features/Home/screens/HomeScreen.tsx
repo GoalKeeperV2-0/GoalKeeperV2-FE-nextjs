@@ -4,6 +4,7 @@ import { CertDataType } from '@/app.features/Certification/types';
 import Link from 'next/link';
 import { SERVICE_URL } from '@/app.modules/constants/ServiceUrl';
 import CertBox from '@/app.components/Box/CertBox';
+import Image from 'next/image';
 
 interface Props {
 	certs: CertDataType[];
@@ -13,7 +14,13 @@ function HomeScreen({ certs, alreadyVerification }: Props) {
 	return (
 		<>
 			<section className="">
-				<HomeBanner1 />
+				<Image
+					src={'/images/home/BN.svg'}
+					alt={'Welcome! 골키퍼를 소개할게요'}
+					width={892}
+					height={269}
+					className="w-full"
+				/>
 			</section>
 
 			<section className="mt-[3rem] space-y-[3rem]">
