@@ -47,7 +47,7 @@ function HomeScreen({ certs, alreadyVerification }: Props) {
 					))}
 				</ul>
 			</section>
-			<section className="mt-[2.6rem] w-full space-y-[2.6rem] ">
+			<section className="pc:hidden mt-[2.6rem] w-full space-y-[2.6rem] ">
 				<h1 className="font-[800] text-[1.6rem]">현재 골키퍼에서는 ..</h1>
 				<div className="space-y-[3.45rem]">
 					<div>
