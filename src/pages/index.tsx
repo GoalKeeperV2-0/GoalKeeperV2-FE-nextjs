@@ -1,9 +1,11 @@
 import { NextPage } from 'next';
 import HomeScreen from '@/app.features/Home/screens/HomeScreen';
 import { useCertList } from '@/app.modules/hooks/useCertList';
+import { useEffect } from 'react';
 
 const Home: NextPage = () => {
 	const { data: certs } = useCertList(0);
+
 	return (
 		<>
 			<HomeScreen
