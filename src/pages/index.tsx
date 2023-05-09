@@ -19,7 +19,6 @@ const Home: NextPage<Props> = ({ data: certs }) => {
 	// const { data: certs } = useCertList(0);
 	console.dir(certs);
 	return <div />;
-};
 
 export default Home;
 /*
