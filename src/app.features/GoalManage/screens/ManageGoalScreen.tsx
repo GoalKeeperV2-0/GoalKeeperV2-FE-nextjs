@@ -50,7 +50,6 @@ function ManageGoalScreen({ myGoals, onGoalFilterChange, goalFilter, curPage, on
 					))}
 				</ul>
 			</div>
-
 			<div>
 				<Pagination curPage={curPage} onPageChange={onPageChange} totalPages={totalPages} numOfPageBtn={5} />
 			</div>
@@ -59,3 +58,11 @@ function ManageGoalScreen({ myGoals, onGoalFilterChange, goalFilter, curPage, on
 }
 
 export default ManageGoalScreen;
+/*
+
+
+			
+
+			
+
+*/
