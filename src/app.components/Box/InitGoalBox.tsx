@@ -8,18 +8,21 @@ import BoxImage from './common/BoxImage';
 import BoxLayout from './common/BoxLayout';
 
 function InitGoalBox() {
+	/*
 	const [modal, setModal] = useRecoilState(modalState);
 	const openModalHandler = () => {
 		setModal({ render: <UploadGoal />, isOpen: true });
-	};
+	};*/
 	return (
-		<BoxLayout onOpenModal={openModalHandler} mode="init">
+		<BoxLayout mode="init" onOpenModal={() => null}>
 			<BoxImage bgUrl="/images/goalBox/init.svg" />
 			<BottomLayout>
 				<div className="flex items-center justify-between ">
-					<Button variant="solid" size="xs" bgColor="bg-buttonGray-200" className="w-[7.6rem] ">
+					{/*
+						<Button variant="solid" size="xs" bgColor="bg-buttonGray-200" className="w-[7.6rem] ">
 						목표등록
 					</Button>
+						*/}
 					<div>🗓 지금</div>
 				</div>
 				<div className="text-left flex flex-col space-y-[0.3rem]">
