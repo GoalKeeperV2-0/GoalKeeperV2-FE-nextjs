@@ -19,7 +19,7 @@ export default function Layout({ children }: Props) {
 			<div className="pc:min-w-[120rem] pc:w-[120rem] pc:max-w-[120rem] mx-auto ">
 				<Header />
 				<div className=" pc:py-[7rem] px-[2rem] pc:px-0  flex pc:space-x-[3rem]">
-					<Aside />
+					{!router.pathname.includes('callback') && <Aside />}
 					<main className="w-full pc:min-w-[89.2rem pc:w-[89.2rem]">{children}</main>
 				</div>
 			</div>
