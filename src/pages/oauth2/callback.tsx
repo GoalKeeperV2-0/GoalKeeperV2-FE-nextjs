@@ -2,12 +2,15 @@ import { oauth2 } from '@/app.modules/api/auth';
 import client from '@/app.modules/api/client';
 import { SERVICE_URL } from '@/app.modules/constants/ServiceUrl';
 import { setCookie } from '@/app.modules/cookie';
+import { loginState } from '@/app.modules/store/login';
 import { useQuery } from '@tanstack/react-query';
 import { useRouter } from 'next/router';
 import React, { useEffect } from 'react';
+import { useRecoilState } from 'recoil';
 
 function Oauth2CallbackPage() {
 	const router = useRouter();
+	const [isLoggedIn, setIsloggedIn] = useRecoilState(loginState);
 	const { data } = useQuery(
 		['oauth2', 'google'],
 		() => oauth2(new URL(document.location.toString()).searchParams.get('code') as string),
@@ -19,6 +22,7 @@ function Oauth2CallbackPage() {
 				setCookie('GRT', refreshToken, { path: '/', secure: true, sameSite: 'none' });
 				setCookie('GAT', accessToken, { path: '/', secure: true, sameSite: 'none' });
 				client.defaults.headers['Authorization'] = `Bearer ${accessToken}`;
+				setIsloggedIn(true);
 				// TODO: 필수 입력 정보 입력안했을때 보내는페이지
 				if (newbie) {
 					router.push(`${SERVICE_URL.oauth2Register}`);

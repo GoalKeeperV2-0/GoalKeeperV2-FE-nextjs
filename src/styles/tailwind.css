@@ -4,6 +4,13 @@
 
 
 @layer components {
+   .text-head3-pc{
+      @apply pc:text-[3rem] pc:font-[800]
+   }
+   .text-head3-mo{
+      @apply text-[2rem] font-[800]
+   }
+
    .text-title1-pc {  
       @apply pc:text-[3rem] pc:font-[800]
   }

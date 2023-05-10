@@ -29,7 +29,7 @@ function LoginView({ error, onSubmit }: Props) {
 			<LoginBanner className="hidden pc:flex w-[48.1rem] min-w-[48.1rem]" />
 			<form onSubmit={onSubmit} className="w-full pc:w-[58.5rem] pc:min-w-[58.5rem] flex flex-col ">
 				<div className="flex items-center justify-between">
-					<h3 className="h-[2.6rem]">로그인</h3>
+					<h1 className="text-head3-mo pc:text-head3-pc">로그인</h1>
 					<button onClick={() => setUserLogin(!userLogin)} className="text-primaryOrange-200 ml-[2rem]" type="button">
 						{userLogin ? '관리자 로그인 >' : '유저 로그인 >'}
 					</button>

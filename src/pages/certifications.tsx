@@ -14,6 +14,14 @@ export const getServerSideProps: GetServerSideProps<Props> = async (ctx) => {
 	console.log(ctx.req.cookies.GAT);
 	const url = 'https://api.goalkeeper.co.kr/api/certifications?page=0';
 	const token = ctx.req.cookies.GAT;
+	if (!token) {
+		return {
+			redirect: {
+				destination: '/login',
+				permanent: true,
+			},
+		};
+	}
 	const headers = { Authorization: `Bearer ${token}` }; // 헤더 설정
 	const response = await axios.get(url, { headers });
 	const data = response.data;

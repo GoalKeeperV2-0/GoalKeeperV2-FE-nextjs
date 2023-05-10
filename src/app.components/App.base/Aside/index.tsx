@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useRecoilState } from 'recoil';
 import OverviewTemplate from './OverviewTemplate';
 import { getUserProfile } from '@/app.modules/api/user';
@@ -11,10 +11,14 @@ import { useQuery } from '@tanstack/react-query';
 import DetailGoal from '@/app.features/GoalManage/modalContents/DetailGoal';
 import UploadGoal from '@/app.features/GoalUpload/modalContents/UploadGoal';
 import Button from '../Button';
+import { getCookie } from '@/app.modules/cookie';
+import { loginState } from '@/app.modules/store/login';
+import client from '@/app.modules/api/client';
 
 // TODO: field & value mapping 시키기
 function Aside() {
 	const [modal, setModal] = useRecoilState(modalState);
+	const [isLoggedIn, setIsloggedIn] = useRecoilState(loginState);
 	const { data: userStatisticsData } = useQuery(['user', 'statistics'], getUserStatistics, {
 		select: (res) => res.data.data,
 		onSuccess: (res) => {
@@ -25,7 +29,7 @@ function Aside() {
 		},
 	});
 
-	const { data: user } = useQuery(['user'], getUserProfile, {
+	const { data: user, refetch } = useQuery(['user'], getUserProfile, {
 		select: (res) => res.data.data,
 		onSuccess: (res) => {
 			console.log(res);
@@ -77,12 +81,18 @@ function Aside() {
 	const openModalHandler = (goalData: GoalDataType) => {
 		setModal({ render: <DetailGoal goal={goalData} onCloseModal={closeModalHandler} />, isOpen: true });
 	};
-
+	useEffect(() => {
+		if (!isLoggedIn) {
+			console.log(isLoggedIn, '로그아웃됨');
+			client.defaults.headers['Authorization'] = '';
+			refetch();
+		}
+	}, [isLoggedIn]);
 	return (
 		<aside className="hidden pc:block h-fit w-[27.8rem]   rounded-[1.6rem] p-[2.4rem] border-[0.1rem] border-borderGray  bg-white space-y-[2rem]">
 			<div className="space-y-[0.4rem]">
-				<div className="pc:text-body6-pc ">{user?.name}</div>
-				<div className="pc:text-body2-pc text-primaryOrange-200 ">{user?.email}</div>
+				<div className="pc:text-body6-pc ">{isLoggedIn ? user?.name : '로그인을 해주세요'}</div>
+				<div className="pc:text-body2-pc text-primaryOrange-200 ">{isLoggedIn ? user?.email : '바로가기'}</div>
 			</div>
 			<div className="space-y-[3rem]">
 				<OverviewTemplate title="">
@@ -90,33 +100,36 @@ function Aside() {
 						{Object.entries(UserStatisticsMap)?.map(([key, value], index) => (
 							<li className="flex justify-between items-center" key={index}>
 								<div className="flex items-center">{value}</div>
-								<div className="text-primaryOrange-200">{userStatisticsData?.[key]}</div>
+								<div className="text-primaryOrange-200">{isLoggedIn ? userStatisticsData?.[key] : 0}</div>
 							</li>
 						))}
 					</ul>
 				</OverviewTemplate>
 				<OverviewTemplate title="오늘 인증해주세요">
-					<Link href={SERVICE_URL.manageGoal}>
-						<span className="absolute top-0 right-0 text-[1.6rem] mb-[0.8rem] font-semibold leading-[1.92rem] text-primaryBlack-200">
-							더보기
-						</span>
-					</Link>
+					{isLoggedIn && (
+						<Link href={SERVICE_URL.manageGoal}>
+							<span className="absolute top-0 right-0 text-[1.6rem] mb-[0.8rem] font-semibold leading-[1.92rem] text-primaryBlack-200">
+								더보기
+							</span>
+						</Link>
+					)}
 					<ul className="space-y-[0.7rem]">
-						{todayCertGoal?.map((goal: GoalDataType) => (
-							<Button
-								key={goal.id}
-								size="sm"
-								variant="solid"
-								bgColor="bg-primaryOrange-200"
-								textColor="text-white"
-								onClick={() => openModalHandler(goal)}
-							>
-								<div className="flex justify-between w-full h-full p-[1.6rem] truncate text-[1.6rem] leading-[1.92rem]">
-									<span className="truncate">{goal.title}</span>
-									<span>🗓 지금</span>
-								</div>
-							</Button>
-						))}
+						{isLoggedIn &&
+							todayCertGoal?.map((goal: GoalDataType) => (
+								<Button
+									key={goal.id}
+									size="sm"
+									variant="solid"
+									bgColor="bg-primaryOrange-200"
+									textColor="text-white"
+									onClick={() => openModalHandler(goal)}
+								>
+									<div className="flex justify-between w-full h-full p-[1.6rem] truncate text-[1.6rem] leading-[1.92rem]">
+										<span className="truncate">{goal.title}</span>
+										<span>🗓 지금</span>
+									</div>
+								</Button>
+							))}
 
 						<Button
 							size="sm"
@@ -134,7 +147,7 @@ function Aside() {
 							<li key={index} className="flex justify-between items-center first:text-primaryOrange-200">
 								<div>{item?.field}</div>
 								<div className="flex items-center space-x-[0.6rem]">
-									<span>{item.value?.toLocaleString()}</span>
+									<span>{isLoggedIn ? item.value?.toLocaleString() : 0}</span>
 									<img alt="" src="/images/aside/ball.svg" className="mt-[0.3rem]" />
 								</div>
 							</li>
