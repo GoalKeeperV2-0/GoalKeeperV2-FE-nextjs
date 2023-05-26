@@ -2,7 +2,7 @@ import UploadGoal from '@/app.features/GoalUpload/modalContents/UploadGoal';
 import { modalState } from '@/app.modules/store/modal';
 import React from 'react';
 import { useRecoilState } from 'recoil';
-import Button from '../App.base/Button';
+import Button from '../Button';
 import BottomLayout from './common/BottomLayout';
 import BoxImage from './common/BoxImage';
 import BoxLayout from './common/BoxLayout';

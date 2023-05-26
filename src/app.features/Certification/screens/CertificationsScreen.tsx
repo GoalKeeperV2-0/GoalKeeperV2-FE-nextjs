@@ -1,4 +1,4 @@
-import CertBox from '@/app.components/Box/CertBox';
+import CertBox from '../../../../app/Box/CertBox';
 import FilterButton from '@/app.components/FilterButton';
 import Pagination from '@/app.components/Pagination';
 import { CategoryType, MappedCategory } from '@/app.features/GoalManage/types';

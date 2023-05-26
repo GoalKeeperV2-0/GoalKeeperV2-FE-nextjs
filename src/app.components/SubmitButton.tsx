@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from './App.base/Button';
+import Button from '../../app/Button';
 
 interface Props {
 	disabled?: boolean;

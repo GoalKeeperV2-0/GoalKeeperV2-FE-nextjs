@@ -1,7 +1,7 @@
 import Badge from '@/app.components/App.base/Badge';
-import Button from '@/app.components/App.base/Button';
-import BoxContent from '@/app.components/Box/common/BoxContent';
-import BoxTitle from '@/app.components/Box/common/BoxTitle';
+import Button from '../../../../app/Button';
+import BoxContent from '../../../../app/Box/common/BoxContent';
+import BoxTitle from '../../../../app/Box/common/BoxTitle';
 import CertDateList from '@/app.features/GoalManage/components/CertDateList';
 import { CategoryType, GoalDataType, MappedCategory } from '@/app.features/GoalManage/types';
 import { postVerification } from '@/app.modules/api/certification';

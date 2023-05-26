@@ -1,7 +1,7 @@
 import React from 'react';
 import ArrowRightIcon from '@/app.modules/assets/icons/arrow-right.svg';
 import ArrowLeftIcon from '@/app.modules/assets/icons/arrow-left.svg';
-import Button from '../App.base/Button';
+import Button from '../../../app/Button';
 interface Props {
 	direction: 'left' | 'right';
 	disabled?: boolean;

@@ -1,6 +1,6 @@
 import React from 'react';
 import LeaveAlertGraphic from '@/app.modules/assets/manageGoal/leaveAlert.svg';
-import Button from '@/app.components/App.base/Button';
+import Button from '../../../../app/Button';
 
 interface Props {
 	onCancel: () => void;

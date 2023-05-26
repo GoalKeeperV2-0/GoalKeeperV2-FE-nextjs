@@ -1,7 +1,7 @@
 import Badge from '@/app.components/App.base/Badge';
-import Button from '@/app.components/App.base/Button';
-import BoxContent from '@/app.components/Box/common/BoxContent';
-import BoxTitle from '@/app.components/Box/common/BoxTitle';
+import Button from '../../../../app/Button';
+import BoxContent from '../../../../app/Box/common/BoxContent';
+import BoxTitle from '../../../../app/Box/common/BoxTitle';
 import { postCert } from '@/app.modules/api/certification';
 import { patchHoldGoal } from '@/app.modules/api/goal';
 import { getDayDiff } from '@/app.modules/utils/getDayDiff';

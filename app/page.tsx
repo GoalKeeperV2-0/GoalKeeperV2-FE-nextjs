@@ -1,16 +1,54 @@
-import React from 'react';
-import HomeBanner1 from '@/app.modules/assets/banners/home1.svg';
-import { CertDataType } from '@/app.features/Certification/types';
+import { cookies } from 'next/headers';
+import HomeScreen from '@/app.features/Home/screens/HomeScreen';
+import axios from 'axios';
 import Link from 'next/link';
 import { SERVICE_URL } from '@/app.modules/constants/ServiceUrl';
-import CertBox from '../../../../app/Box/CertBox';
 import Image from 'next/image';
-
+import CertBox from './Box/CertBox';
 interface Props {
-	certs: CertDataType[];
-	alreadyVerification: number[];
+	serverData?: any;
 }
-function HomeScreen({ certs, alreadyVerification }: Props) {
+
+async function getData() {
+	const url = 'https://api.goalkeeper.co.kr/api/certifications?page=0';
+	const token = cookies().get('GAT')?.value;
+	const headers = { Authorization: `Bearer ${token}` }; // 헤더 설정
+	const res = await fetch(url, { headers });
+	if (!res.ok) {
+		// This will activate the closest `error.js` Error Boundary
+		throw new Error('Failed to fetch data');
+	}
+
+	return res.json();
+}
+/*
+export const getServerSideProps: GetServerSideProps<Props> = async (ctx) => {
+	console.log(ctx.req.cookies.GAT);
+	const url = 'https://api.goalkeeper.co.kr/api/certifications?page=0';
+	const token = ctx.req.cookies.GAT;
+	if (!token) {
+		return {
+			redirect: {
+				destination: '/login',
+				permanent: true,
+			},
+		};
+	}
+	const headers = { Authorization: `Bearer ${token}` }; // 헤더 설정
+	try {
+		const response = await axios.get(url, { headers });
+		const data = response.data;
+		return { props: { serverData: data } };
+	} catch {
+		return { props: {} };
+	}
+};*/
+export default async function HomePage() {
+	// const { data: certs } = useCertList(0);
+	const data = await getData();
+	//console.dir(data?.data?.certificationResponses?.content);
+	const certs = data.data.certificationResponses.content.slice(0, 6);
+	const alreadyVerification = data?.data?.alreadyVerification;
 	return (
 		<>
 			<section>
@@ -40,7 +78,7 @@ function HomeScreen({ certs, alreadyVerification }: Props) {
 					</Link>
 				</div>
 				<ul className="grid grid-cols-3 gap-[3rem]">
-					{certs?.map((cert, index) => (
+					{certs.map((cert: any, index: number) => (
 						<li key={index}>
 							<CertBox certData={cert} alreadyVerified={alreadyVerification.includes(cert.id)} />
 						</li>
@@ -85,5 +123,11 @@ function HomeScreen({ certs, alreadyVerification }: Props) {
 		</>
 	);
 }
+/*
 
-export default HomeScreen;
+<HomeScreen
+					certs={data?.data?.certificationResponses?.content?.slice(0, 6)}
+					alreadyVerification={data?.data?.alreadyVerification}
+				/>
+
+*/

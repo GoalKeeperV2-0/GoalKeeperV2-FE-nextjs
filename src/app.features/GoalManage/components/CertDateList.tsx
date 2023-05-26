@@ -1,4 +1,4 @@
-import Button from '@/app.components/App.base/Button';
+import Button from '../../../../app/Button';
 import { getDayDiff } from '@/app.modules/utils/getDayDiff';
 import React from 'react';
 import { CertStateType, CertType, MappedCertState } from '../types';

@@ -1,13 +1,13 @@
 import React from 'react';
 import Image from 'next/image';
-import RouteModal from './Modal/RouteModal';
 import { SERVICE_URL } from '@/app.modules/constants/ServiceUrl';
 import Link from 'next/link';
+import MobileMenu from './MobileMenu';
 
 export default function Header() {
 	/*const dropDownRef = useRef<HTMLImageElement>(null);
-	// const [isOpen, setIsOpen] = useDetectClose(dropDownRef, [false, false]);
-	const [isOpenSideMenu, setIsOpenSideMenu] = useState<boolean>(false);*/
+	// const [isOpen, setIsOpen] = useDetectClose(dropDownRef, [false, false]);*/
+
 	const MENU_LIST = [
 		{
 			title: '공지사항',
@@ -26,8 +26,6 @@ export default function Header() {
 			path: SERVICE_URL.manageGoal,
 		},
 	];
-
-	//const handleClickOfSideMenu = () => setIsOpenSideMenu(!isOpenSideMenu);
 
 	return (
 		<header className="h-[8.6rem]  px-[2rem] pc:px-0 w-full mx-auto flex justify-between  items-center">
@@ -68,7 +66,7 @@ export default function Header() {
 					</div>
 
 					<div className="relative">
-						<Link href={SERVICE_URL.mypage}>
+						<Link href={SERVICE_URL.login}>
 							<Image
 								alt="내 정보 바로가기"
 								src="/images/header/user.svg"
@@ -83,19 +81,7 @@ export default function Header() {
 				</div>
 			</div>
 
-			<div className="block pc:hidden">
-				{/* 
-				<button type="button" onClick={handleClickOfSideMenu} aria-label={isOpenSideMenu ? '메뉴 닫기' : '메뉴 열기'}>
-					<Image
-						alt=""
-						src="/images/header/hamburger.png"
-						width={16}
-						height={12}
-						className="min-w-[1.6rem] mb-[0.3rem]"
-					/>
-				</button>
-				*/}
-			</div>
+			<MobileMenu />
 
 			{/*isOpenSideMenu && <div aria-expanded={isOpenSideMenu} aria-hidden={!isOpenSideMenu} />*/}
 		</header>
