@@ -1,13 +1,8 @@
 import { cookies } from 'next/headers';
-import HomeScreen from '@/app.features/Home/screens/HomeScreen';
-import axios from 'axios';
 import Link from 'next/link';
 import { SERVICE_URL } from '@/app.modules/constants/ServiceUrl';
 import Image from 'next/image';
 import CertBox from './Box/CertBox';
-interface Props {
-	serverData?: any;
-}
 
 async function getData() {
 	const url = 'https://api.goalkeeper.co.kr/api/certifications?page=0';
@@ -21,28 +16,7 @@ async function getData() {
 
 	return res.json();
 }
-/*
-export const getServerSideProps: GetServerSideProps<Props> = async (ctx) => {
-	console.log(ctx.req.cookies.GAT);
-	const url = 'https://api.goalkeeper.co.kr/api/certifications?page=0';
-	const token = ctx.req.cookies.GAT;
-	if (!token) {
-		return {
-			redirect: {
-				destination: '/login',
-				permanent: true,
-			},
-		};
-	}
-	const headers = { Authorization: `Bearer ${token}` }; // 헤더 설정
-	try {
-		const response = await axios.get(url, { headers });
-		const data = response.data;
-		return { props: { serverData: data } };
-	} catch {
-		return { props: {} };
-	}
-};*/
+
 export default async function HomePage() {
 	// const { data: certs } = useCertList(0);
 	const data = await getData();
@@ -123,11 +97,3 @@ export default async function HomePage() {
 		</>
 	);
 }
-/*
-
-<HomeScreen
-					certs={data?.data?.certificationResponses?.content?.slice(0, 6)}
-					alreadyVerification={data?.data?.alreadyVerification}
-				/>
-
-*/
