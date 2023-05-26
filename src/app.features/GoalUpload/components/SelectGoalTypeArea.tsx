@@ -1,4 +1,4 @@
-import Button from '@/app.components/App.base/Button';
+import Button from '../../../../app/Button';
 import Label from '@/app.components/App.base/Input/Label';
 import { GoalType } from '@/app.modules/api/goal';
 import React, { useState } from 'react';

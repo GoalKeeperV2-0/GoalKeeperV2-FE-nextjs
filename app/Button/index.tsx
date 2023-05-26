@@ -1,5 +1,5 @@
 import React from 'react';
-import { BgColor, BorderColor, TextColor } from '../types';
+import { BgColor, BorderColor, TextColor } from '../App.base/types';
 
 export interface Props {
 	variant: 'text' | 'solid' | 'outline';

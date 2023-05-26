@@ -1,5 +1,5 @@
-import GoalBox from '@/app.components/Box/GoalBox';
-import InitGoalBox from '@/app.components/Box/InitGoalBox';
+import GoalBox from '../../../../app/Box/GoalBox';
+import InitGoalBox from '../../../../app/Box/InitGoalBox';
 import FilterButton from '@/app.components/FilterButton';
 import Pagination from '@/app.components/Pagination';
 import React, { useState } from 'react';

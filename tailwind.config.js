@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-	content: ['./src/**/*.tsx', './public/index.html'],
+	content: ['./app/**/*.{js,ts,jsx,tsx,mdx}'],
 	theme: {
 		fontFamily: {
 			AppleSDGothicNeo: ['AppleSDGothicNeo', 'Noto Sans KR', 'sans - serif'],

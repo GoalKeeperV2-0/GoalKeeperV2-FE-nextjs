@@ -1,4 +1,4 @@
-import Button from '@/app.components/App.base/Button';
+import Button from '../../../../../app/Button';
 import CancelIcon from '@/app.modules/assets/icons/calendar/cancel.svg';
 import React from 'react';
 interface Props {

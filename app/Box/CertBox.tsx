@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import { useRecoilState } from 'recoil';
 import BoxLayout from './common/BoxLayout';
@@ -10,8 +11,8 @@ import { formatDate } from '@/app.modules/utils/formatDate';
 import { getDayDiff } from '@/app.modules/utils/getDayDiff';
 import DetailCert from '@/app.features/Certification/modalContents/DetailCert';
 import { CategoryType, GoalDataType, MappedCategory } from '@/app.features/GoalManage/types';
-import Badge from '../App.base/Badge';
 import { getRequireSuccess } from '@/app.modules/utils/getRequireSuccess';
+import Badge from '../App.base/Badge';
 
 interface Props {
 	certData: CertDataType;
@@ -23,12 +24,12 @@ function CertBox({ certData, alreadyVerified }: Props) {
 	const { year, month, date } = getKoreaToday();
 
 	const todayString = formatDate(year, month, date);
-	const [modal, setModal] = useRecoilState(modalState);
+	//const [modal, setModal] = useRecoilState(modalState);
 	const dday = getDayDiff(
 		todayString,
 		`${certDate.split('-')[0]}-${certDate.split('-')[1]}-${+certDate.split('-')[2] + 7}`
 	);
-	const closeModalHandler = () => {
+	/*const closeModalHandler = () => {
 		setModal({
 			render: null,
 			isOpen: false,
@@ -46,7 +47,7 @@ function CertBox({ certData, alreadyVerified }: Props) {
 			),
 			isOpen: true,
 		});
-	};
+	};*/
 
 	const isManyTimeGoal = () => {
 		return Boolean(certData.manyTimeGoal !== undefined);
@@ -63,7 +64,7 @@ function CertBox({ certData, alreadyVerified }: Props) {
 	};
 
 	return (
-		<BoxLayout onOpenModal={openModalHandler}>
+		<BoxLayout onOpenModal={() => null}>
 			<div
 				className="h-1/2 bg-buttonGray-200 pc:rounded-t-[1.5rem] bg-cover border-t-[0.1rem] border-x-[0.1rem]   border-borderGray"
 				style={{

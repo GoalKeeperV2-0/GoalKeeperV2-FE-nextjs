@@ -3,6 +3,7 @@ import { CategoryType } from '@/app.features/GoalManage/types';
 import { getGoalByCategory } from '@/app.modules/api/goal';
 import { useMyGoals } from '@/app.modules/hooks/useMyGoals';
 import { useQuery } from '@tanstack/react-query';
+import { GetServerSideProps } from 'next';
 
 import React, { useEffect, useState } from 'react';
 
